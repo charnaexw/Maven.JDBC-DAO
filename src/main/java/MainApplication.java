@@ -30,18 +30,20 @@ public class MainApplication {
         carRepository.create(new Car(12L,"Toyota", "Camry", "Red", 232L));
         carRepository.create(new Car(12L,"Toyota", "Camry", "Red", 232L));
 
-//        executeStatement(mysqlDbConnection, new StringBuilder()
-//                .append("INSERT INTO automobiles.carTable(")
-//                .append("id, make, model, color, vin) ")
-//                .append("VALUES (12, 'Toyota', 'Camry', 'Red', 232;")
-//                .toString());
-//
-//        executeStatement(mysqlDbConnection, new StringBuilder()
-//                .append("INSERT INTO automobiles.carTable(")
-//                .append("id, make, model, color, vin) ")
-//                .append("VALUES (13, 'Toyota', 'Camry', 'Red', 232;")
-//                .toString());
-//
+/*
+        executeStatement(mysqlDbConnection, new StringBuilder()
+                .append("INSERT INTO automobiles.carTable(")
+                .append("id, make, model, color, vin) ")
+                .append("VALUES (12, 'Toyota', 'Camry', 'Red', 232;")
+                .toString());
+
+        executeStatement(mysqlDbConnection, new StringBuilder()
+                .append("INSERT INTO automobiles.carTable(")
+                .append("id, make, model, color, vin) ")
+                .append("VALUES (13, 'Toyota', 'Camry', 'Red', 232;")
+                .toString());
+
+*/
         System.out.println(carRepository.readAll());
     }
 

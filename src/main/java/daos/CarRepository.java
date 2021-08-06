@@ -64,12 +64,17 @@ public class CarRepository implements Repo{
                 .get();
     }
 
-    public void update(Long id, Car newCarData){
+    public void update(Long carId, Car newCarData){
+
 
     }
 
-    public void delete(Long id){
-
+    public void delete(Long carId){
+        readAll()
+                .stream()
+                .filter(car -> car.getId().equals(carId))
+                .findAny()
+                .get();
     }
 
     public void delete(Car car){
