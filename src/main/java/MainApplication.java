@@ -28,7 +28,7 @@ public class MainApplication {
                 .toString());
 
         carRepository.create(new Car(12L,"Toyota", "Camry", "Red", 232L));
-        carRepository.create(new Car(12L,"Toyota", "Camry", "Red", 232L));
+        carRepository.create(new Car(13L,"Toyota", "Camry", "Blue", 132L));
 
 /*
         executeStatement(mysqlDbConnection, new StringBuilder()

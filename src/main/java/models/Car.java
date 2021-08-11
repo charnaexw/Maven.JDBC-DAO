@@ -57,4 +57,22 @@ public class Car {
         this.vin = vin;
     }
 
+    @Override
+    public String toString(){
+        return "Car {" +
+                "id=" + id +
+                ", make =" + make +
+                ", model =" + model +
+                ", color =" + color +
+                ", vin =" + vin +"}";
+    }
+//    @Override
+//    public String toString() {
+//        return "Artist {" +
+//                "ID = " + id +
+//                ", Name = " + name +
+//                ", Birth Place = " + birthPlace +
+//                ", Birth Year = " + birthYear +
+//                "}";
+//    }
 }

@@ -16,6 +16,7 @@ public class CarRepository implements Repo{
         this.connection=connection;
     }
     @Override
+
     public Connection getConnection() {
         return connection;
     }
@@ -25,7 +26,7 @@ public class CarRepository implements Repo{
                 String.format(new StringBuilder()
                 .append("INSERT INTO automobiles.carTable(")
                 .append("id, make, model, color, vin) ")
-                .append("VALUES (%s, '%s', '%s', '%s', %s;")
+                .append("VALUES (%s, '%s', '%s', '%s', %s);")
                 .toString(),
                 car.getId(),
                 car.getMake(),
@@ -35,7 +36,7 @@ public class CarRepository implements Repo{
     }
 
     public List<Car> readAll(){
-        ResultSet resultSet =executeQuery(String.format("Select * FROM automobiles.carTable WHERE id=%s"));
+        ResultSet resultSet =executeQuery(String.format("Select * FROM automobiles.carTable;"));
         List<Car> list = new ArrayList<>();
         try {
             while(resultSet.next()) {
@@ -65,22 +66,33 @@ public class CarRepository implements Repo{
     }
 
     public void update(Long carId, Car newCarData){
+        executeStatement(
+                String.format(new StringBuilder()
+                                .append("UPDATE automobiles.carTable")
+                                .append("SET id, make, model, color, vin ")
+                                .append("WHERE ;")
+                                .toString(),
+                        newCarData.getId(),
+                        newCarData.getMake(),
+                        newCarData.getModel(),
+                        newCarData.getColor(),
+                        newCarData.getVin()));
 
 
     }
 
     public void delete(Long carId){
-        readAll()
-                .stream()
-                .filter(car -> car.getId().equals(carId))
-                .findAny()
-                .get();
-    }
-
-    public void delete(Car car){
+        executeStatement(
+                String.format(new StringBuilder()
+                                .append("DELETE FROM automobiles.carTable(")
+                                .append("WHERE id = %s; ")
+                                .toString(),
+                                carId));
 
     }
 
-
-
-}
+    public void delete(Car car) {
+        Long carID = car.getId();
+        delete(carID);
+    }
+    }
